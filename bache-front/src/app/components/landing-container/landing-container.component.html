@@ -1,15 +1,15 @@
 <div class="landing-page">
 
-  <div class="left-column">
+  <div class="column left-column">
 
     <div class="display-container">
       <div *ngIf="isRegister">
-        <p>Registro</p>
+        <h3 class="title">Registro</h3>
         <p class="subtitle">Registrate en Bache para empezar a chatear menos, y verse mas.</p>  
       </div>
   
       <div *ngIf="isLogin">
-        <p>Inicio de Sesión</p>
+        <h3 class="title">Inicio de Sesión</h3>
         <p class="subtitle">Inicia sesión para tener acceso a las últimas actualizaciones de tus amigos.</p>  
       </div>
 
@@ -23,6 +23,10 @@
       <app-register *ngIf="isRegister"></app-register>
     </div>
 
+  </div>
+
+  <div class="column right-column">
+    <img class="logo" src="../../../assets/logo.png">
   </div>
 </div>
 

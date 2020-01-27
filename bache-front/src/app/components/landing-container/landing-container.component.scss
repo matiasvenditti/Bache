@@ -1,6 +1,6 @@
 .display-container {
     position: relative;
-    top: 20%;
+    top: 15%;
     width: 70%;
     margin: auto;
 }
@@ -10,13 +10,35 @@
     height: 100vh;
 }
 
+.column {
+    float: left;
+}
+
 .left-column {
     width: 40%;
     height: 100%;
     background-color: #F7F8FC;
 }
 
+.right-column {
+    width: 60%;
+    height: 100%;
+}
+
 .subtitle{
     color: #62768D;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.logo {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    margin-bottom: 10px;
 }
