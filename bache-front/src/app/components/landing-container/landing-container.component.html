@@ -1,0 +1,19 @@
+<div class="landing-page">
+  
+  <div class="left-column">
+
+    <div class="display-container">
+      <ul uk-tab>
+        <li (click)="onDisplayLogin()" class="uk-active"><a href="#">Iniciar Sesión</a></li>
+        <li (click)="onDisplayRegister()" class="uk-active"><a href="#">Registrarme</a></li>
+      </ul>
+    
+    
+      <app-login *ngIf="isLogin"></app-login>
+      <app-register *ngIf="isRegister"></app-register>
+    </div>
+
+  </div>
+</div>
+
+
