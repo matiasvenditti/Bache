@@ -1,7 +1,8 @@
 .display-container {
     position: relative;
-    top: 30%;
-    padding: 3rem;
+    top: 20%;
+    width: 70%;
+    margin: auto;
 }
 
 .landing-page {
@@ -13,4 +14,9 @@
     width: 40%;
     height: 100%;
     background-color: #F7F8FC;
+}
+
+.subtitle{
+    color: #62768D;
+    margin-bottom: 40px;
 }

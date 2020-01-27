@@ -3,6 +3,16 @@
   <div class="left-column">
 
     <div class="display-container">
+      <div *ngIf="isRegister">
+        <p>Registro</p>
+        <p class="subtitle">Registrate en Bache para empezar a chatear menos, y verse mas.</p>  
+      </div>
+  
+      <div *ngIf="isLogin">
+        <p>Inicio de Sesión</p>
+        <p class="subtitle">Inicia sesión para tener acceso a las últimas actualizaciones de tus amigos.</p>  
+      </div>
+
       <ul uk-tab>
         <li (click)="onDisplayLogin()" class="uk-active"><a href="#">Iniciar Sesión</a></li>
         <li (click)="onDisplayRegister()" class="uk-active"><a href="#">Registrarme</a></li>
