@@ -4,6 +4,10 @@
 @import "./node_modules/uikit/src/scss/mixins-theme.scss";
 @import "./node_modules/uikit/src/scss/uikit-theme.scss";
 
+* {
+    font-family: 'Maven Pro', sans-serif;
+}
+
 .uk-input {
     border-radius: 5px;
     border: none;
