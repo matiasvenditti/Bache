@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { LandingContainerComponent } from './components/landing-container/landing-container.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { HomeContainerComponent } from './components/home-container/home-container.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './components/pages/home/home.component';
     RegisterComponent,
     LandingComponent,
     LandingContainerComponent,
-    HomeComponent
+    HomeComponent,
+    HomeContainerComponent
   ],
   imports: [
     BrowserModule,
