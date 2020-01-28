@@ -10,6 +10,7 @@ import { LandingContainerComponent } from './components/landing-container/landin
 import { HomeComponent } from './components/pages/home/home.component';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
 import { ColumnaIzqComponent } from './components/columna-izq/columna-izq.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ColumnaIzqComponent } from './components/columna-izq/columna-izq.compon
     LandingContainerComponent,
     HomeComponent,
     HomeContainerComponent,
-    ColumnaIzqComponent
+    ColumnaIzqComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
