@@ -1,10 +1,3 @@
-.display-container {
-    position: relative;
-    top: 5%;
-    width: 70%;
-    margin: auto;
-}
-
 .home-page {
     width: 100%;
     height: 100vh;
@@ -14,21 +7,9 @@
     float: left;
 }
 
-.left-column {
-    width: 30%;
-    height: 100%;
-    background-color: #F7F8FC;
-}
-
 .right-column {
     width: 70%;
     height: 100%;
-}
-
-.subtitle{
-    color: #62768D;
-    margin-top: 10px;
-    margin-bottom: 60px;
 }
 
 .logo {
@@ -37,17 +18,4 @@
     left: 50%;
     border-radius: 20px;
     transform: translate(-50%, -50%);
-}
-
-.foto-usuario {
-    border-radius: 100px;
-    width: 65%;
-    display: block;
-    margin: auto;
-}
-
-.name {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 100px;
 }

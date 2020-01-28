@@ -9,6 +9,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { LandingContainerComponent } from './components/landing-container/landing-container.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
+import { ColumnaIzqComponent } from './components/columna-izq/columna-izq.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeContainerComponent } from './components/home-container/home-contain
     LandingComponent,
     LandingContainerComponent,
     HomeComponent,
-    HomeContainerComponent
+    HomeContainerComponent,
+    ColumnaIzqComponent
   ],
   imports: [
     BrowserModule,
