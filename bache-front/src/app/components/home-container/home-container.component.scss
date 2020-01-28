@@ -1,11 +1,11 @@
 .display-container {
     position: relative;
-    top: 15%;
+    top: 5%;
     width: 70%;
     margin: auto;
 }
 
-.landing-page {
+.home-page {
     width: 100%;
     height: 100vh;
 }
@@ -15,13 +15,13 @@
 }
 
 .left-column {
-    width: 40%;
+    width: 30%;
     height: 100%;
     background-color: #F7F8FC;
 }
 
 .right-column {
-    width: 60%;
+    width: 70%;
     height: 100%;
 }
 
@@ -39,6 +39,15 @@
     transform: translate(-50%, -50%);
 }
 
-.title {
-    margin-bottom: 10px;
+.foto-usuario {
+    border-radius: 100px;
+    width: 65%;
+    display: block;
+    margin: auto;
+}
+
+.name {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 100px;
 }
