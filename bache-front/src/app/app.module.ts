@@ -11,6 +11,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
 import { ColumnaIzqComponent } from './components/columna-izq/columna-izq.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeContentComponent } from './components/home-content/home-content.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     HomeContainerComponent,
     ColumnaIzqComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeContentComponent
   ],
   imports: [
     BrowserModule,
