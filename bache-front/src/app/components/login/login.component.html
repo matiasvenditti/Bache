@@ -1,10 +1,10 @@
-<form>
+<form [formGroup]="loginForm">
   <div class="uk-margin">
-    <input class="uk-input" type="text" placeholder="Email">
+    <input formControlName="email" class="uk-input" type="text" placeholder="Email">
   </div>
 
   <div class="uk-margin">
-    <input class="uk-input" type="password" placeholder="Password">
+    <input formControlName="password" class="uk-input" type="password" placeholder="Password">
   </div>
 
   <button class="uk-button uk-button-primary uk-width-1-1 submit" (click)="onLogin()">Iniciar Sesión</button>
