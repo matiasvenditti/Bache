@@ -11,6 +11,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
 import { ColumnaIzqComponent } from './components/columna-izq/columna-izq.component';
 import { HeaderComponent } from './components/header/header.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
