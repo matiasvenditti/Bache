@@ -3,8 +3,8 @@
 
     <div class="uk-navbar-left">
       <div class="uk-navbar-item">
-        <form action="javascript:void(0)">
-            <input class="uk-input uk-form-width-large" type="text" placeholder="Buscar amigos">
+        <form [formGroup]="searchForm">
+            <input formControlName="search" class="uk-input uk-form-width-large" type="text" placeholder="Buscar amigos">
             <button class="uk-button uk-button-default"><span uk-icon="search"></span></button>
         </form>
       </div>
@@ -22,11 +22,11 @@
 
 </nav>
   <!-- <p uk-margin>
-    
+
     <input class="uk-input buscar" type="text" placeholder="Buscar amigos"> -->
     <!-- <button class="uk-button uk-button-default buscar">Default</button> -->
     <!-- <a href="#" class="uk-icon-link uk-margin-small-right boton-buscar" uk-icon="search"></a>
-    
+
     <img class="logo" src="../../../assets/logo.png">
     <a href="#" class="uk-icon-link uk-margin-small-right boton1" uk-icon="file-edit"></a>
 

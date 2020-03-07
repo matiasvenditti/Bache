@@ -1,13 +1,10 @@
 package com.example.bache.controller;
 
 import com.example.bache.dto.UserDTO;
-import com.example.bache.exception.EntityNotFoundException;
-import com.example.bache.exception.InvalidArgumentException;
 import com.example.bache.model.User;
 import com.example.bache.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
