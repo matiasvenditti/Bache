@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
 
   onRegister() {
     this.userService.createUser(this.registerForm.value).subscribe((user: User) => {
-      console.log(`User: ${user} succesfully registered`);
+      console.log(`User: ${user.name} succesfully registered`);
     });
 
   }
