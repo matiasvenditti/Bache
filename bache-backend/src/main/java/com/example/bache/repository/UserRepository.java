@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("select u from User u where u.name = ?1")
-    List<User> findByUsernameAnd(String username, Pageable pageable);
+    @Query(value = "select u from User u where u.email = ?1")
+    List<User> findByUsername(String username, Pageable pageable);
 }

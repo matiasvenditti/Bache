@@ -13,7 +13,9 @@ import { ColumnaIzqComponent } from './components/columna-izq/columna-izq.compon
 import { HeaderComponent } from './components/header/header.component';
 import { HomeContentComponent } from './components/home-content/home-content.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { JwtInterceptor } from './utils/JwtInterceptor';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
