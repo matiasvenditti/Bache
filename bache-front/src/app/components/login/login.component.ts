@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -23,12 +23,16 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    console.log(this.loginForm.value);
     this.auth.login(this.loginForm.value).subscribe((token: string) => {
       console.log(token);
       localStorage.setItem("token", token);
       this.router.navigate(["/home"]);
     });
+  }
+
+  isTouched(formControl: string): boolean {
+    const control: AbstractControl = this.loginForm.get(formControl);
+    return control.invalid && (control.dirty || control.touched);
   }
 
 }

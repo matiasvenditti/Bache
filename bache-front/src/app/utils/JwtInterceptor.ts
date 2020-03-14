@@ -10,7 +10,6 @@ export class JwtInterceptor implements HttpInterceptor {
     constructor(private auth: AuthService) {}
     
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log("Intercepting");
         if (this.auth.isAuthenticated()) {
             req = req.clone({
                 setHeaders: {

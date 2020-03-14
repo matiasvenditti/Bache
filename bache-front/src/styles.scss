@@ -16,3 +16,12 @@
 .submit {
     border-radius: 5px;
 }
+
+.invalid {
+    border: 1px solid #DB5461;
+}
+
+.error-message {
+    margin-top: 10px;
+    color: #DB5461
+}
