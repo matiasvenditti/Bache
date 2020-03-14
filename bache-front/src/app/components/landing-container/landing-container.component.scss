@@ -23,6 +23,8 @@
 .right-column {
     width: 60%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .subtitle{
@@ -32,13 +34,34 @@
 }
 
 .logo {
-    position: relative;
-    top: 50%;
-    left: 50%;
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
     border-radius: 20px;
-    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    // transform: translate(-50%, -50%);
 }
 
 .title {
     margin-bottom: 10px;
+}
+
+.aux1 {
+    width: 100%;
+}
+
+.aux2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.img-aux {
+    width: 40%;
+}
+
+.text-aux {
+    width: 20%;
 }
