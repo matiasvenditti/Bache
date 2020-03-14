@@ -3,16 +3,16 @@
     <input formControlName="username" class="uk-input" type="text" placeholder="Email" [ngClass]= "{'invalid': isTouched('username')}">
 
     <div *ngIf="isTouched('username')" class="error-message">
-      <div *ngIf="isTouched('username')">Email is required</div>
+      <div *ngIf="isTouched('username')">Email es requerido</div>
     </div>
 
   </div>
 
   <div class="uk-margin">
     <input formControlName="password" class="uk-input" type="password" placeholder="Password" [ngClass]= "{'invalid': isTouched('password')}">
-    
+
     <div *ngIf="isTouched('password')" class="error-message">
-      <div *ngIf="isTouched('password')">Password is required</div>
+      <div *ngIf="isTouched('password')">Contraseña es requerida</div>
     </div>
 
   </div>
