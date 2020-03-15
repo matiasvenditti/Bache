@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { JwtToken } from 'src/app/model/JwtToken';
 
 @Component({
   selector: 'app-login',
@@ -23,9 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.auth.login(this.loginForm.value).subscribe((token: string) => {
-      console.log(token);
-      localStorage.setItem("token", token);
+    this.auth.login(this.loginForm.value).subscribe((response: JwtToken) => {
+      localStorage.setItem("token", response.token);
       this.router.navigate(["/home"]);
     });
   }
