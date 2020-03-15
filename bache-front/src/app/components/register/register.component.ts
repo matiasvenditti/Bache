@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
 import {User} from '../../model/User';
 import {Router} from '@angular/router';
 
@@ -31,6 +31,11 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/home']);
     });
 
+  }
+
+  isTouched(formControl: string): boolean {
+    const control: AbstractControl = this.registerForm.get(formControl);
+    return control.invalid && (control.dirty || control.touched);
   }
 
 }
