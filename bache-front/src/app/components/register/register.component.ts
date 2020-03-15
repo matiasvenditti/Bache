@@ -3,6 +3,8 @@ import {UserService} from '../../services/user.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../model/User';
 import {Router} from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { Credentials } from 'src/app/model/Credentials';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private userService: UserService, private fb: FormBuilder, private router: Router) {
+  constructor(private userService: UserService, private fb: FormBuilder, private router: Router, private auth: AuthService) {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
@@ -27,8 +29,10 @@ export class RegisterComponent implements OnInit {
 
   onRegister() {
     this.userService.createUser(this.registerForm.value).subscribe((user: User) => {
-      console.log(`User: ${user} succesfully registered`);
-      this.router.navigate(['/home']);
+      const loginCredentials: Credentials = {username: user.email, password: this.registerForm.value.password}
+      this.auth.login(loginCredentials).subscribe(() => {
+        this.router.navigate(['/home']);
+      });
     });
 
   }
