@@ -1,18 +1,31 @@
 <form [formGroup]="registerForm">
   <div class="uk-margin">
-    <input formControlName="name" class="uk-input" type="text" placeholder="Nombre">
+    <input formControlName="name" class="uk-input" type="text" placeholder="Nombre" [ngClass]= "{'invalid': isTouched('name')}">
+
+    <div *ngIf="isTouched('name')" class="error-message">
+      <div *ngIf="isTouched('name')">El nombre es requerido</div>
+    </div>
   </div>
 
   <div class="uk-margin">
-    <input formControlName="surname" class="uk-input" type="text" placeholder="Apellido">
+    <input formControlName="surname" class="uk-input" type="text" placeholder="Apellido" [ngClass]= "{'invalid': isTouched('surname')}">
+    <div *ngIf="isTouched('surname')" class="error-message">
+      <div *ngIf="isTouched('surname')">El apellido es requerido</div>
+    </div>
   </div>
 
   <div class="uk-margin">
-    <input formControlName="email" class="uk-input" type="text" placeholder="Email">
+    <input formControlName="email" class="uk-input" type="text" placeholder="Email" [ngClass]= "{'invalid': isTouched('email')}">
+    <div *ngIf="isTouched('email')" class="error-message">
+      <div *ngIf="isTouched('email')">El mail es requerido</div>
+    </div>
   </div>
 
   <div class="uk-margin">
-    <input formControlName="password" class="uk-input" type="password" placeholder="Contraseña">
+    <input formControlName="password" class="uk-input" type="password" placeholder="Contraseña" [ngClass]= "{'invalid': isTouched('password')}">
+    <div *ngIf="isTouched('password')" class="error-message">
+      <div *ngIf="isTouched('password')">La contraseña es requerido</div>
+    </div>
   </div>
 
   <button class="uk-button uk-button-primary uk-width-1-1 submit" (click)="onRegister()" [disabled]="!registerForm.valid">Registrarme</button>
