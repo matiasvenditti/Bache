@@ -23,7 +23,7 @@ public class JwtUserDetailsService implements UserDetailsService {
         final List<User> users = userRepository.findByUsername(s, PageRequest.of(0, 1));
         if (!users.isEmpty()) {
             User user = users.get(0);
-            return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), new ArrayList<>());
+            return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), new ArrayList<>());
         } else {
             throw new UsernameNotFoundException("[err] - could not find user.");
         }
