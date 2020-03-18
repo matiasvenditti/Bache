@@ -45,4 +45,10 @@ public class UserController {
         return userService.update(id, user);
     }
 
+    @GetMapping(path ="/email/{email}")
+    public User readByEmail(@RequestParam String email) {
+        return userService.readByEmail(email);
+    }
+
+
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/model/User';
 
 
 @Component({
@@ -9,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./columna-izq.component.scss']
 })
 export class ColumnaIzqComponent implements OnInit {
+
+  @Input()
+  user: User;
 
   constructor(private auth: AuthService, private router: Router) { }
 

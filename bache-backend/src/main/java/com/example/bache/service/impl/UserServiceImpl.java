@@ -31,6 +31,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User readByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    @Override
     public User create(User entity) {
         entity.setPassword(passwordEncoder.encode(entity.getPassword()));
         return userRepository.save(entity);
