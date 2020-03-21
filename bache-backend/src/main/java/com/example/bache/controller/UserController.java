@@ -3,15 +3,18 @@ package com.example.bache.controller;
 import com.example.bache.dto.UserDTO;
 import com.example.bache.model.User;
 import com.example.bache.service.UserService;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping(path="/user")
 public class UserController {
+
 
     @Autowired
     private UserService userService;
@@ -46,7 +49,8 @@ public class UserController {
     }
 
     @GetMapping(path ="/email/{email}")
-    public User readByEmail(@RequestParam String email) {
+    public User readByEmail(@PathVariable("email") String email) {
+        System.out.println(email);
         return userService.readByEmail(email);
     }
 

@@ -19,12 +19,11 @@ export class UserService {
   }
 
   getUser(id: number): Observable<User> {
-    return this.http.get<User>(`$${this.baseUrl}/${id}`);
+    return this.http.get<User>(`${this.baseUrl}/${id}`);
   }
 
   getUserByEmail(email: string): Observable<User> {
-    //let params = new HttpParams().set("email",email);
-    return this.http.get<User>(`$${this.baseUrl}/email/${email}`);
+    return this.http.get<User>(`${this.baseUrl}/email/${email}`);
   }
 
   createUser(user: UserDTO): Observable<User> {

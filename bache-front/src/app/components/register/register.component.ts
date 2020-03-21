@@ -30,7 +30,9 @@ export class RegisterComponent implements OnInit {
   onRegister() {
     this.userService.createUser(this.registerForm.value).subscribe((user: User) => {
       const loginCredentials: Credentials = {username: user.email, password: this.registerForm.value.password}
-      this.auth.login(loginCredentials).subscribe(() => {
+      this.auth.login(loginCredentials).subscribe((response) => {
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("email", this.registerForm.value.email);
         this.router.navigate(['/home']);
       });
     });
