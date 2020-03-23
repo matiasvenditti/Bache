@@ -50,7 +50,6 @@ public class UserController {
 
     @GetMapping(path ="/email/{email}")
     public User readByEmail(@PathVariable("email") String email) {
-        System.out.println(email);
         return userService.readByEmail(email);
     }
 

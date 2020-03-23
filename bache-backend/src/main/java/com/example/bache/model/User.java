@@ -5,25 +5,49 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Getter private long id;
+    @Column(name = "user_id")
+    private long id;
 
     @Column
-    @Getter @Setter private String name;
+    @Setter private String name;
 
     @Column
-    @Getter @Setter private String surname;
+    @Setter private String surname;
 
     @Column(unique = true)
-    @Getter @Setter private String email;
+    @Setter private String email;
 
     @Column
-    @Getter @Setter private String password;
+    @Setter private String password;
+
+    @OneToMany(cascade = { CascadeType.ALL })
+    @JoinColumn(name = "user_id")
+    @Setter private Set<Event> events = new HashSet<>();
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "user_group",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "group_id")
+    )
+    @Setter private Set<Group> groups = new HashSet<>();
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "calendar")
+    @Setter private Calendar calendar;
+
+    @ManyToOne
+    @JoinColumn(name="theme_id")
+    @Getter @Setter private Theme theme;
 
 }

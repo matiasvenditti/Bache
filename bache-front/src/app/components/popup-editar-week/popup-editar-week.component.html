@@ -1,0 +1,63 @@
+<div id="modal-sections" uk-modal>
+  <div class="uk-modal-dialog">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-modal-header">
+      <h2 class="uk-modal-title centrado">Editar Semana</h2>
+    </div>
+    <div class="uk-modal-body">
+      <form class="uk-form-horizontal uk-margin-large" [formGroup]="editWeekForm">
+        <ul class="uk-list uk-list-divider">
+          <li>
+            <div class="uk-margin">
+              <label class="uk-form-label">Tema</label>
+              <div class="uk-form-controls">
+                <select class="uk-select">
+                  <option>Clasico</option>
+                  <option>Frio</option>
+                  <option>Calido</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="uk-margin">
+              <label class="uk-form-label">Hora de inicio:</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Some text...">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="uk-margin">
+              <label class="uk-form-label">Hora de fin:</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Some text...">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="uk-margin">
+              <div class="uk-form-label">Dias</div>
+              <div class="uk-form-controls uk-form-controls-text">
+                <ul class="uk-subnav uk-subnav-pill derecha" uk-switcher>
+                  <li><a [@rotation]="!daysVisible ? 'up' : 'down'" uk-icon="chevron-up" class="uk-icon-link" (click)="toggleDays()"></a></li>
+                </ul>
+
+                <ul *ngIf="daysVisible" class="uk-margin">
+                  <li *ngFor="let day of weekDays">
+                    <label><input class="uk-checkbox" type="checkbox">{{day}}</label>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="uk-modal-footer uk-text-right">
+      <button class="uk-button uk-button-default uk-modal-close izquierda" type="button">Cancelar</button>
+      <button class="uk-button uk-button-primary" type="button">Guardar</button>
+    </div>
+  </div>
+</div>

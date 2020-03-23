@@ -16,6 +16,20 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { JwtInterceptor } from './utils/JwtInterceptor';
 import { AuthService } from './services/auth.service';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { ColumnaDerComponent } from './components/columna-der/columna-der.component';
+import { PopupEditarWeekComponent } from './components/popup-editar-week/popup-editar-week.component';
+import { PopupNuevoBacheComponent } from './components/popup-nuevo-bache/popup-nuevo-bache.component';
+import { NewBacheFormComponent } from './components/new-bache-form/new-bache-form.component';
+import { NewActivityFormComponent } from './components/new-activity-form/new-activity-form.component';
+import { UserComponent } from './pages/user/user.component';
+import { UserContainerComponent } from './components/user-container/user-container.component';
+import { UserColumnaIzqComponent } from './components/user-columna-izq/user-columna-izq.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +42,29 @@ import { AuthService } from './services/auth.service';
     HomeContainerComponent,
     ColumnaIzqComponent,
     HeaderComponent,
-    HomeContentComponent
+    HomeContentComponent,
+    CalendarComponent,
+    ColumnaDerComponent,
+    PopupEditarWeekComponent,
+    PopupNuevoBacheComponent,
+    NewBacheFormComponent,
+    NewActivityFormComponent,
+    UserComponent,
+    UserContainerComponent,
+    UserColumnaIzqComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [
     AuthService,

@@ -1,0 +1,19 @@
+<div id="nuevo-bache" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title centrado">Nueva Actividad</h2>
+        </div>
+        <div class="display-container">
+    
+          <ul uk-tab class="padding">
+            <li (click)="onDisplayLogin()" class="uk-active"><a href="#">Bache</a></li>
+            <li (click)="onDisplayRegister()" class="uk-active"><a href="#">Actividad</a></li>
+          </ul>
+        
+          <app-new-bache-form *ngIf="isBache"></app-new-bache-form>
+          <app-new-activity-form *ngIf="isActividad"></app-new-activity-form>
+        </div>
+        
+    </div>
+</div>
