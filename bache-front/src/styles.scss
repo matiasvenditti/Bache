@@ -4,6 +4,12 @@
 @import "./node_modules/uikit/src/scss/mixins-theme.scss";
 @import "./node_modules/uikit/src/scss/uikit-theme.scss";
 
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+/* ng-bootstrap */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 * {
     font-family: 'Maven Pro', sans-serif;
 }
