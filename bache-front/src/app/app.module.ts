@@ -22,6 +22,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ColumnaDerComponent } from './components/columna-der/columna-der.component';
+import { PopupEditarWeekComponent } from './components/popup-editar-week/popup-editar-week.component';
+import { PopupNuevoBacheComponent } from './components/popup-nuevo-bache/popup-nuevo-bache.component';
+import { NewBacheFormComponent } from './components/new-bache-form/new-bache-form.component';
+import { NewActivityFormComponent } from './components/new-activity-form/new-activity-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { FormsModule } from '@angular/forms';
     ColumnaIzqComponent,
     HeaderComponent,
     HomeContentComponent,
-    CalendarComponent
+    CalendarComponent,
+    ColumnaDerComponent,
+    PopupEditarWeekComponent,
+    PopupNuevoBacheComponent,
+    NewBacheFormComponent,
+    NewActivityFormComponent
   ],
   imports: [
     BrowserModule,

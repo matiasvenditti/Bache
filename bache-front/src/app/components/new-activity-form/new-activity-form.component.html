@@ -1,0 +1,53 @@
+<p class="porQueNoFunciona">Recorda que las Actividades solo las ves vos!</p>  
+
+<div class="uk-modal-body">
+    <form class="uk-form-horizontal uk-margin-large" [formGroup]="newActivityForm">
+      <ul class="uk-list uk-list-divider">
+        <li>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="form-horizontal-text">Nombre</label>
+              <div class="uk-form-controls">
+                  <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+              </div>
+          </div>
+          </li>
+        <li>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-select">Dia</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="form-horizontal-select">
+                        <option>Seleccionar Dia</option>
+                        <option>Lunes</option>
+                        <option>Martes</option>
+                        <option>Miercoles</option>
+                        <option>Jueves</option>
+                        <option>Viernes</option>
+                        <option>Sabado</option>
+                        <option>Domingo</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+    <li>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Hora de inicio:</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+        </div>
+    </div>
+    </li>
+    <li>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Hora de fin:</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+        </div>
+    </div>
+    </li>
+    </ul>
+  </form>
+</div>
+<div class="uk-modal-footer uk-text-right">
+    <button class="uk-button uk-button-default uk-modal-close izquierda" type="button">Cancelar</button>
+    <button class="uk-button uk-button-primary" type="button">Guardar</button>
+</div>

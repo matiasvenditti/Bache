@@ -1,0 +1,69 @@
+<div id="modal-sections" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title centrado">Editar Semana</h2>
+        </div>
+        <div class="uk-modal-body">
+            <form class="uk-form-horizontal uk-margin-large" [formGroup]="editWeekForm">
+              <ul class="uk-list uk-list-divider">
+                <li>
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-horizontal-select">Tema</label>
+                  <div class="uk-form-controls">
+                      <select class="uk-select" id="form-horizontal-select">
+                          <option>Clasico</option>
+                          <option>Frio</option>
+                          <option>Calido</option>
+                      </select>
+                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Hora de inicio:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+                </div>
+            </div>
+            </li>
+            <li>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Hora de fin:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+                </div>
+            </div>
+            </li>
+            <li>
+              <div class="uk-margin">
+                  <div class="uk-form-label">Dias</div>
+                  <div class="uk-form-controls uk-form-controls-text">
+                    <ul class="uk-subnav uk-subnav-pill derecha" uk-switcher>
+                      <li><a id="uno" href="#" uk-icon="chevron-up" class="boton-arriba" onclick="clickEnUno()"></a></li>
+                      <li><a id="dos" href="#" uk-icon="chevron-down" class="boton-abajo" onclick="clickEnDos()"></a></li>
+                  </ul>
+                  
+                  <ul class="uk-switcher uk-margin">
+                      <li></li>
+                      <li> <label><input class="uk-checkbox" type="checkbox" checked> Lunes</label><br>
+                        <label><input class="uk-checkbox" type="checkbox"> Martes</label><br>
+                        <label><input class="uk-checkbox" type="checkbox" > Miercoles</label><br>
+                        <label><input class="uk-checkbox" type="checkbox" > Jueves</label><br>
+                        <label><input class="uk-checkbox" type="checkbox" > Viernes</label><br>
+                        <label><input class="uk-checkbox" type="checkbox" > Sabado</label><br>
+                        <label><input class="uk-checkbox" type="checkbox" > Domingo</label></li>
+                  </ul>
+
+                  </div>
+              </div>
+            </li>
+            </ul>
+          </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close izquierda" type="button">Cancelar</button>
+            <button class="uk-button uk-button-primary" type="button">Guardar</button>
+        </div>
+    </div>
+</div>

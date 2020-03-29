@@ -1,0 +1,20 @@
+.izquierda{
+    float: left;
+  }
+  
+  .marcoImputs { /*Renglones del formulario*/
+      background-color: rgb(175,175,175); /*Color de relleno*/
+      border-style: solid;
+      border-color: rgb(200,200,200); /*Color borde, igual al fondo del formulario*/
+      padding: 9px;
+  }
+  
+  .derecha{
+    float: right;
+  }
+  
+  .porQueNoFunciona{
+    padding-left: 30px;
+    font-size: small;
+    margin-bottom: 0px;
+  }
