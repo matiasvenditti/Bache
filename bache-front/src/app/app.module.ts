@@ -27,6 +27,9 @@ import { PopupEditarWeekComponent } from './components/popup-editar-week/popup-e
 import { PopupNuevoBacheComponent } from './components/popup-nuevo-bache/popup-nuevo-bache.component';
 import { NewBacheFormComponent } from './components/new-bache-form/new-bache-form.component';
 import { NewActivityFormComponent } from './components/new-activity-form/new-activity-form.component';
+import { UserComponent } from './pages/user/user.component';
+import { UserContainerComponent } from './components/user-container/user-container.component';
+import { UserColumnaIzqComponent } from './components/user-columna-izq/user-columna-izq.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { NewActivityFormComponent } from './components/new-activity-form/new-act
     PopupEditarWeekComponent,
     PopupNuevoBacheComponent,
     NewBacheFormComponent,
-    NewActivityFormComponent
+    NewActivityFormComponent,
+    UserComponent,
+    UserContainerComponent,
+    UserColumnaIzqComponent
   ],
   imports: [
     BrowserModule,

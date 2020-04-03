@@ -1,0 +1,36 @@
+<div class="user-page">
+    <div *ngIf="isFriend" class="contenedor">
+      <div class="column left-column">
+        <app-user-columna-izq [user]="anotherUser" [amistad]="amistad"></app-user-columna-izq>
+      </div>
+      
+      
+        <div class="column right-column">
+          <app-header ></app-header>
+          <app-calendar></app-calendar>
+        </div>
+      </div>
+
+      <div *ngIf="isntFriend" class="contenedor">
+        <div class="column left-column">
+          <app-user-columna-izq [user]="anotherUser" [amistad]="amistad"></app-user-columna-izq>
+        </div>
+        
+        
+          <div class="column right-column">
+            <app-header ></app-header>
+            <div class="lock">
+              <p class="lock-aux"></p>
+              <span uk-icon="icon: lock; ratio: 10"></span>
+              <p class="lock-aux"></p>
+            </div>
+            
+          </div>
+        </div>
+    <ul uk-tab>
+      <li (click)="onDisplayFriend()" class="uk-active"><a href="#">Friend</a></li>
+      <li (click)="onDisplayIsntFriend()" class="uk-active"><a href="#">Not Friend</a></li>
+    </ul>
+  </div>
+  
+  
