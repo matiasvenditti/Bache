@@ -33,9 +33,6 @@ public class Event {
     @Column
     @Getter @Setter private boolean isPublic;
 
-    @ManyToMany(mappedBy = "events")
-    @Getter @Setter private Set<User> users = new HashSet<>();
-
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "event_group",

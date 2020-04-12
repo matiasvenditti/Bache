@@ -29,12 +29,8 @@ public class User {
     @Column
     @Getter @Setter private String password;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "user_event",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "event_id")
-    )
+    @OneToMany(cascade = { CascadeType.ALL })
+    @JoinColumn(name = "user_id")
     @Getter @Setter private Set<Event> events = new HashSet<>();
 
     @ManyToMany(cascade = { CascadeType.ALL })
