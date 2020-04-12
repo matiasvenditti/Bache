@@ -1,12 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {CalendarService} from '../../services/calendar.service';
+import {state, trigger, style, transition, animate} from '@angular/animations';
 
 
 @Component({
   selector: 'app-popup-editar-week',
   templateUrl: './popup-editar-week.component.html',
-  styleUrls: ['./popup-editar-week.component.scss']
+  styleUrls: ['./popup-editar-week.component.scss'],
+  animations: [
+    trigger('rotation', [
+      state('down', style({
+        transform: 'rotate(0)'
+      })),
+      state('up', style({
+        transform: 'rotate(-180deg)'
+      })),
+      transition('down <=> up', [
+        animate('0.3s ease-out')
+      ])
+    ])
+  ]
 })
 export class PopupEditarWeekComponent implements OnInit {
 
@@ -14,25 +28,19 @@ export class PopupEditarWeekComponent implements OnInit {
   weekDays: string[];
 
   daysVisible: boolean = false;
-  upVisible: boolean = false;
-  downVisible: boolean = true;
 
-  constructor(private calendarService: CalendarService) { }
+  constructor(private calendarService: CalendarService, private fb: FormBuilder) {
+    this.editWeekForm = this.fb.group({
+      // TODO: Form Controls here
+    });
+  }
 
   ngOnInit(): void {
     this.weekDays = this.calendarService.getWeekDays();
   }
 
-  displayDays(): void {
-    this.daysVisible = true;
-    this.upVisible = true;
-    this.downVisible = false;
-  }
-
-  hideDays(): void {
-    this.daysVisible = false;
-    this.upVisible = false;
-    this.downVisible = true;
+  toggleDays(): void {
+    this.daysVisible = !this.daysVisible;
   }
 
 }

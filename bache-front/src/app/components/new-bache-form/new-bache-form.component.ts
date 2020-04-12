@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
+import {CalendarService} from '../../services/calendar.service';
 
 
 @Component({
@@ -10,8 +11,14 @@ import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '
 export class NewBacheFormComponent implements OnInit {
 
   newBacheForm: FormGroup;
+  days: string[];
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private calendarService: CalendarService) {
+    this.newBacheForm = this.fb.group({
+      // TODO: Form Controls here
+    });
+    this.days = this.calendarService.getWeekDays();
+  }
 
   ngOnInit(): void {
   }

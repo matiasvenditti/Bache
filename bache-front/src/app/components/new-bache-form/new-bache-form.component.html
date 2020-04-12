@@ -1,50 +1,44 @@
 <div class="uk-modal-body">
-    <form class="uk-form-horizontal uk-margin-large" [formGroup]="newBacheForm">
-      <ul class="uk-list uk-list-divider">
+  <form class="uk-form-horizontal uk-margin-large" [formGroup]="newBacheForm">
+    <ul class="uk-list uk-list-divider">
 
-        <li>
-            <div class="uk-margin">
-                <label class="uk-form-label" for="form-horizontal-select">Dia</label>
-                <div class="uk-form-controls">
-                    <select class="uk-select" id="form-horizontal-select">
-                        <option>Seleccionar Dia</option>
-                        <option>Lunes</option>
-                        <option>Martes</option>
-                        <option>Miercoles</option>
-                        <option>Jueves</option>
-                        <option>Viernes</option>
-                        <option>Sabado</option>
-                        <option>Domingo</option>
-                    </select>
-                </div>
-            </div>
-        </li>
-    <li>
-      <div class="uk-margin">
-        <label class="uk-form-label" for="form-horizontal-text">Hora de inicio:</label>
-        <div class="uk-form-controls">
-            <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
-        </div>
-    </div>
-    </li>
-    <li>
-      <div class="uk-margin">
-        <label class="uk-form-label" for="form-horizontal-text">Hora de fin:</label>
-        <div class="uk-form-controls">
-            <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
-        </div>
-    </div>
-    </li>
-    <li>
+      <li>
         <div class="uk-margin">
-            <label class="uk-form-label" for="form-horizontal-select">Grupo</label>
-            <div class="uk-form-controls">
-                <select class="uk-select" id="form-horizontal-select">
-                    <option>Todos</option>
-                    <option>Facultad</option>
-                    <option>Barrio</option>
-                </select>
-            </div>
+          <label class="uk-form-label">Dia</label>
+          <div class="uk-form-controls">
+            <select class="uk-select">
+              <option>Seleccionar Dia</option>
+              <option *ngFor="let day of days">{{day}}</option>
+            </select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="uk-margin">
+          <label class="uk-form-label">Hora de inicio:</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" placeholder="Some text...">
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="uk-margin">
+          <label class="uk-form-label">Hora de fin:</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" placeholder="Some text...">
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="uk-margin">
+          <label class="uk-form-label">Grupo</label>
+          <div class="uk-form-controls">
+            <select class="uk-select">
+              <option>Todos</option>
+              <option>Facultad</option>
+              <option>Barrio</option>
+            </select>
+          </div>
         </div>
       </li>
 
@@ -52,6 +46,6 @@
   </form>
 </div>
 <div class="uk-modal-footer uk-text-right">
-    <button class="uk-button uk-button-default uk-modal-close izquierda" type="button">Cancelar</button>
-    <button class="uk-button uk-button-primary" type="button">Guardar</button>
+  <button class="uk-button uk-button-default uk-modal-close izquierda" type="button">Cancelar</button>
+  <button class="uk-button uk-button-primary" type="button">Guardar</button>
 </div>

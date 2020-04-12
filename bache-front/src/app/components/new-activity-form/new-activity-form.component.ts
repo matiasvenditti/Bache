@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
+import {CalendarService} from '../../services/calendar.service';
 
 @Component({
   selector: 'app-new-activity-form',
@@ -9,8 +10,11 @@ import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '
 export class NewActivityFormComponent implements OnInit {
 
   newActivityForm: FormGroup;
+  days: string[];
 
-  constructor() { }
+  constructor(private calendarService: CalendarService) {
+    this.days = this.calendarService.getWeekDays();
+  }
 
   ngOnInit(): void {
   }
