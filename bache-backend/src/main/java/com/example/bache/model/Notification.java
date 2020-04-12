@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Notification {
 
     @Id
@@ -24,8 +25,12 @@ public class Notification {
     @Getter @Setter private boolean seen;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="sender_id")
     @Getter @Setter private User sender;
+
+    @ManyToOne()
+    @JoinColumn(name="receiver_id")
+    @Getter @Setter private User receiver;
 
 
 }

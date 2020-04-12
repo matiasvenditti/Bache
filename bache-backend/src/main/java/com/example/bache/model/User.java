@@ -45,11 +45,4 @@ public class User {
     @JoinColumn(name = "user_id")
     @Getter private Set<Calendar> calendars = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    @Getter private Set<Notification> notifications = new HashSet<>();
-
-    @OneToMany(mappedBy="sender")
-    @Getter private Set<Notification> emittedNotifications = new HashSet<>();
-
 }
