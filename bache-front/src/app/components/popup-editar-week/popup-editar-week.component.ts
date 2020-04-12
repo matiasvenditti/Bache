@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '@angular/forms';
+import {CalendarService} from '../../services/calendar.service';
 
 
 @Component({
@@ -10,10 +11,22 @@ import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from '
 export class PopupEditarWeekComponent implements OnInit {
 
   editWeekForm: FormGroup;
+  weekDays: string[];
 
-  constructor() { }
+  daysVisible: boolean = false;
+
+  constructor(private calendarService: CalendarService) { }
 
   ngOnInit(): void {
+    this.weekDays = this.calendarService.getWeekDays();
+  }
+
+  displayDays(): void {
+    this.daysVisible = true;
+  }
+
+  hideDays(): void {
+    this.daysVisible = false;
   }
 
 }
