@@ -14,6 +14,8 @@ export class PopupEditarWeekComponent implements OnInit {
   weekDays: string[];
 
   daysVisible: boolean = false;
+  upVisible: boolean = false;
+  downVisible: boolean = true;
 
   constructor(private calendarService: CalendarService) { }
 
@@ -23,10 +25,14 @@ export class PopupEditarWeekComponent implements OnInit {
 
   displayDays(): void {
     this.daysVisible = true;
+    this.upVisible = true;
+    this.downVisible = false;
   }
 
   hideDays(): void {
     this.daysVisible = false;
+    this.upVisible = false;
+    this.downVisible = true;
   }
 
 }
