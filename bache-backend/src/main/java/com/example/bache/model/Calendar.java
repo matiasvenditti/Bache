@@ -27,6 +27,9 @@ public class Calendar {
     @JoinColumn(name = "calendar_id")
     @Getter @Setter private Set<Day> calendarDays = new HashSet<>();
 
+    @OneToOne(mappedBy = "calendar")
+    private User user;
+
     public Calendar(Set<Day> calendarDays) {
         this.init = 9;
         this.end = 20;
