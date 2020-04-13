@@ -26,4 +26,10 @@ public class Calendar {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "calendar_id")
     @Getter @Setter private Set<Day> calendarDays = new HashSet<>();
+
+    public Calendar(Set<Day> calendarDays) {
+        this.init = 9;
+        this.end = 20;
+        this.calendarDays = calendarDays;
+    }
 }

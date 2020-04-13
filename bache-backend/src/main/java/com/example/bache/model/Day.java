@@ -16,4 +16,8 @@ public class Day {
 
     @Column
     @Getter @Setter private String day;
+
+    public Day(String day) {
+        this.day = day;
+    }
 }

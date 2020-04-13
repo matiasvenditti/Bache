@@ -2,8 +2,10 @@ package com.example.bache.service.impl;
 
 import com.example.bache.exception.EntityNotFoundException;
 import com.example.bache.exception.InvalidArgumentException;
+import com.example.bache.model.Calendar;
 import com.example.bache.model.User;
 import com.example.bache.repository.UserRepository;
+import com.example.bache.service.CalendarService;
 import com.example.bache.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,6 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private CalendarService calendarService;
 
     @Override
     public List<User> readAll() {
@@ -37,6 +42,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User create(User entity) {
+        final Calendar calendar = calendarService.getCalendar();
+        entity.setCalendar(calendar);
         entity.setPassword(passwordEncoder.encode(entity.getPassword()));
         return userRepository.save(entity);
     }

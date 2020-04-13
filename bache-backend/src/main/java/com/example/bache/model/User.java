@@ -42,9 +42,9 @@ public class User {
     )
     @Setter private Set<Group> groups = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private Set<Calendar> calendars = new HashSet<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "calendar")
+    @Setter private Calendar calendar;
 
     @ManyToOne
     @JoinColumn(name="theme_id")
