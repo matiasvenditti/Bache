@@ -41,7 +41,7 @@ const colors: any = {
 })
 export class CalendarComponent implements OnInit {
 
-  locale: string = 'fr';
+  locale: string = 'es-AR';
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 

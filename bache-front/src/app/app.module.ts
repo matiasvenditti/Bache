@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,9 +32,8 @@ import { UserContainerComponent } from './components/user-container/user-contain
 import { UserColumnaIzqComponent } from './components/user-columna-izq/user-columna-izq.component';
 import { registerLocaleData } from '@angular/common';
 
-import localeFr from '@angular/common/locales/fr';
-
-registerLocaleData(localeFr);
+import localeEs from '@angular/common/locales/es-AR';
+registerLocaleData(localeEs, 'es-AR');
 
 @NgModule({
   declarations: [
@@ -73,7 +72,8 @@ registerLocaleData(localeFr);
   ],
   providers: [
     AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }  
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: LOCALE_ID, useValue: 'es-AR' },  
   ],
   bootstrap: [AppComponent]
 })
