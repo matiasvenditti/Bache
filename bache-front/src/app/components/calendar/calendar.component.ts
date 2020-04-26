@@ -15,7 +15,8 @@ import {
   CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
-  CalendarView
+  CalendarView,
+  DAYS_OF_WEEK,
 } from 'angular-calendar';
 
 const colors: any = {
@@ -40,11 +41,15 @@ const colors: any = {
 })
 export class CalendarComponent implements OnInit {
 
+  locale: string = 'fr';
+
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Week;
 
   CalendarView = CalendarView;
+
+  weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
 
   viewDate: Date = new Date();
 

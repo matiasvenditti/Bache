@@ -30,6 +30,11 @@ import { NewActivityFormComponent } from './components/new-activity-form/new-act
 import { UserComponent } from './pages/user/user.component';
 import { UserContainerComponent } from './components/user-container/user-container.component';
 import { UserColumnaIzqComponent } from './components/user-columna-izq/user-columna-izq.component';
+import { registerLocaleData } from '@angular/common';
+
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
