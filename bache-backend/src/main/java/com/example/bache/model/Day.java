@@ -15,9 +15,9 @@ public class Day {
     @Getter private long id;
 
     @Column
-    @Getter @Setter private String day;
+    @Getter @Setter private String dayName;
 
-    public Day(String day) {
-        this.day = day;
+    public Day(String dayName) {
+        this.dayName = dayName;
     }
 }
