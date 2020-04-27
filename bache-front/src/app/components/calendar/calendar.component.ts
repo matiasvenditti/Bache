@@ -21,7 +21,6 @@ import {
 } from 'angular-calendar';
 import { Calendar } from 'src/app/model/Calendar';
 import { CalendarService } from 'src/app/services/calendar.service';
-import {Observable} from 'rxjs';
 
 
 const colors: any = {

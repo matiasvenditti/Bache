@@ -16,8 +16,7 @@ export class ColumnaIzqComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onLogout() {
     this.auth.logout();

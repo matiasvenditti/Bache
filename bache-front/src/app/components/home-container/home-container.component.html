@@ -1,10 +1,10 @@
 <div class="home-page">
-  <app-columna-izq [user]="myUser"></app-columna-izq>
+  <app-columna-izq *ngIf="myUser" [user]="myUser"></app-columna-izq>
   
 
   <div class="column right-column">
     <app-header ></app-header>
-    <app-calendar [user]="myUser"></app-calendar>
+    <app-calendar *ngIf="myUser" [user]="myUser"></app-calendar>
     <app-columna-der></app-columna-der>
   </div>
 </div>
