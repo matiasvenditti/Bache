@@ -18,21 +18,21 @@ public class Calendar {
     @Getter private long id;
 
     @Column(name = "initial_hour")
-    @Getter @Setter private double init;
+    @Getter @Setter private double startHour;
 
     @Column(name = "end_hour")
-    @Getter @Setter private double end;
+    @Getter @Setter private double endHour;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "calendar_id")
-    @Getter @Setter private Set<Day> calendarDays = new HashSet<>();
+    @Getter @Setter private Set<Day> days = new HashSet<>();
 
     @OneToOne(mappedBy = "calendar")
     private User user;
 
     public Calendar(Set<Day> calendarDays) {
-        this.init = 9;
-        this.end = 20;
-        this.calendarDays = calendarDays;
+        this.startHour = 9;
+        this.endHour = 20;
+        this.days = calendarDays;
     }
 }
