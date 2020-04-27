@@ -8,6 +8,7 @@
           [view]="view"
           [(viewDate)]="viewDate"
           (viewDateChange)="closeOpenMonthViewDay()"
+          
         >
           Previous
         </div>
@@ -78,6 +79,9 @@
       [events]="events"
       [refresh]="refresh"
       [locale]="locale"
+      [dayStartHour]=calendar?.startHour
+      [dayEndHour]=calendar?.endHour
+      [excludeDays]=excludeDays
       (eventClicked)="handleEvent('Clicked', $event.event)"
       (eventTimesChanged)="eventTimesChanged($event)"
     >

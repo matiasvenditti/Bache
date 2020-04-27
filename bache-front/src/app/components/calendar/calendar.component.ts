@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, Input } from '@angular/core';
+import { User } from 'src/app/model/User';
 import {
   startOfDay,
   endOfDay,
@@ -18,6 +19,10 @@ import {
   CalendarView,
   DAYS_OF_WEEK,
 } from 'angular-calendar';
+import { Calendar } from 'src/app/model/Calendar';
+import { CalendarService } from 'src/app/services/calendar.service';
+import {Observable} from 'rxjs';
+
 
 const colors: any = {
   red: {
@@ -41,6 +46,15 @@ const colors: any = {
 })
 export class CalendarComponent implements OnInit {
 
+  @Input()
+  user: User;
+
+  excludeDays: number[];
+  
+  daysss: number[];
+
+  calendar: Calendar;
+  
   locale: string = 'es-AR';
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
@@ -121,9 +135,17 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal, private caledarService: CalendarService) {}
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.caledarService.getUserCalendar(this.user.id).subscribe((calendar: Calendar)=>{
+        this.calendar = calendar;
+        const calendarMapValues = calendar.days.map(day => this.caledarService.getMapValue(day.dayName));
+        this.excludeDays = [0, 1, 2, 3, 4, 5, 6];
+        calendarMapValues.forEach( element => this.excludeDays.splice(this.excludeDays.indexOf(element), 1));
+    });
+    
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
