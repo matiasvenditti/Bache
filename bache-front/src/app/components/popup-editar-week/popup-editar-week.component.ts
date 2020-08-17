@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CalendarService} from '../../services/calendar.service';
-import {state, trigger, style, transition, animate} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Calendar} from '../../model/calendar/Calendar';
+import {CalendarForm, ICalendarForm} from '../../model/calendar/CalendarForm';
 
 
 @Component({
@@ -29,13 +31,24 @@ export class PopupEditarWeekComponent implements OnInit {
 
   daysVisible: boolean = false;
 
+  @Input()
+  calendar: Calendar;
+
+  calendarForm: CalendarForm;
+
   constructor(private calendarService: CalendarService, private fb: FormBuilder) {
-    this.editWeekForm = this.fb.group({
-      // TODO: Form Controls here
-    });
   }
 
   ngOnInit(): void {
+    this.calendarForm = new CalendarForm(this.calendar);
+    this.editWeekForm = this.fb.group({
+      // TODO: Form Controls here
+      // theme: [null, Validators.required],
+      startHour: [this.calendarForm.startHour, [Validators.required]],
+      endHour: [this.calendarForm.endHour, Validators.required],
+      days: [this.calendarForm.days, Validators.required]
+    });
+
     this.weekDays = this.calendarService.getWeekDays();
   }
 
@@ -43,5 +56,10 @@ export class PopupEditarWeekComponent implements OnInit {
     this.daysVisible = !this.daysVisible;
   }
 
-}
+  submitUpdate() {
+    const value: ICalendarForm = this.editWeekForm.value;
+    const result = this.calendarForm.convertToCalendar(value);
+    console.log(result);
+  }
 
+}

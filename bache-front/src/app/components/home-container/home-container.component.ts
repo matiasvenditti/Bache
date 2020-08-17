@@ -16,10 +16,10 @@ export class HomeContainerComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUserByEmail(localStorage.getItem("email")).subscribe((user : User) => {
+    this.userService.getUserByEmail(localStorage.getItem("email")).subscribe((user: User) => {
       this.myUser = user;
     });
-  } 
+  }
 
   onDisplayLogin(): void {
     this.isLogin = true;

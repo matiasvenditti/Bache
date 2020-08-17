@@ -23,7 +23,7 @@
             <div class="uk-margin">
               <label class="uk-form-label">Hora de inicio:</label>
               <div class="uk-form-controls">
-                <input type="time" value=calendar?.startHour>
+                <input formControlName="startHour" type="time">
               </div>
             </div>
           </li>
@@ -31,7 +31,7 @@
             <div class="uk-margin">
               <label class="uk-form-label">Hora de fin:</label>
               <div class="uk-form-controls">
-                <input type="time" value="20:00">
+                <input formControlName="endHour" type="time">
               </div>
             </div>
           </li>
@@ -57,7 +57,7 @@
     </div>
     <div class="uk-modal-footer uk-text-right">
       <button class="uk-button uk-button-default uk-modal-close izquierda" type="button">Cancelar</button>
-      <button class="uk-button uk-button-primary" type="button">Guardar</button>
+      <button (click)="submitUpdate()" class="uk-button uk-button-primary" type="button">Guardar</button>
     </div>
   </div>
 </div>

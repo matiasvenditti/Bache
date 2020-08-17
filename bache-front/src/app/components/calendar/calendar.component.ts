@@ -19,7 +19,7 @@ import {
   CalendarView,
   DAYS_OF_WEEK,
 } from 'angular-calendar';
-import { Calendar } from 'src/app/model/Calendar';
+import { Calendar } from 'src/app/model/calendar/Calendar';
 import { CalendarService } from 'src/app/services/calendar.service';
 
 
@@ -49,11 +49,11 @@ export class CalendarComponent implements OnInit {
   user: User;
 
   excludeDays: number[];
-  
+
   daysss: number[];
 
   calendar: Calendar;
-  
+
   locale: string = 'es-AR';
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
@@ -135,7 +135,7 @@ export class CalendarComponent implements OnInit {
   activeDayIsOpen: boolean = true;
 
   constructor(private modal: NgbModal, private caledarService: CalendarService) {}
-  
+
   ngOnInit(): void {
     this.caledarService.getUserCalendar(this.user.id).subscribe((calendar: Calendar)=>{
         this.calendar = calendar;
@@ -143,7 +143,7 @@ export class CalendarComponent implements OnInit {
         this.excludeDays = [0, 1, 2, 3, 4, 5, 6];
         calendarMapValues.forEach( element => this.excludeDays.splice(this.excludeDays.indexOf(element), 1));
     });
-    
+
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {

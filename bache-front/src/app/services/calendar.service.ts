@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Calendar} from '../model/Calendar';
+import {Calendar} from '../model/calendar/Calendar';
 import {environment} from '../../environments/environment.prod';
 import {Observable} from 'rxjs';
 
@@ -21,7 +21,7 @@ export class CalendarService {
     'Domingo'
   ];
 
-  private calendarMapValues:Map<string, number> = 
+  private calendarMapValues:Map<string, number> =
     new Map([
         ["Domingo", 0],
         ["Lunes", 1],
