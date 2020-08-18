@@ -62,4 +62,12 @@ export class PopupEditarWeekComponent implements OnInit {
     console.log(result);
   }
 
+  isChecked(day: string): boolean{
+    let variable = false;
+    this.calendarForm.days.forEach(element => {
+      if (element.dayName == day) {variable = true;}
+    });
+    return variable;
+
+  }
 }

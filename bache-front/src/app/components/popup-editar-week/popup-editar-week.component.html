@@ -45,7 +45,9 @@
 
                 <ul *ngIf="daysVisible" class="uk-margin">
                   <li *ngFor="let day of weekDays">
-                    <label><input class="uk-checkbox" type="checkbox">{{day}}</label>
+                    <div *ngIf = "isChecked(day); then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock><label><input class="uk-checkbox" type="checkbox" checked>{{day}}</label></ng-template>
+                    <ng-template #elseBlock> <label><input class="uk-checkbox" type="checkbox">{{day}}</label></ng-template>
                   </li>
                 </ul>
 
