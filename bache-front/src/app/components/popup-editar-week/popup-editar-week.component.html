@@ -35,6 +35,9 @@
               </div>
             </div>
           </li>
+          <li *ngIf="errorHours" class="error-message">
+              <div *ngIf="errorHours">La hora de fin debe ser posterior a la de inicio</div>
+          </li>
           <li>
             <div class="uk-margin">
               <div class="uk-form-label">Dias</div>
@@ -43,11 +46,11 @@
                   <li><a [@rotation]="!daysVisible ? 'up' : 'down'" uk-icon="chevron-up" class="uk-icon-link" (click)="toggleDays()"></a></li>
                 </ul>
 
-                <ul *ngIf="daysVisible" class="uk-margin">
+                <ul *ngIf="daysVisible" class="uk-margin" >
                   <li *ngFor="let day of weekDays">
-                    <div *ngIf = "isChecked(day); then thenBlock else elseBlock"></div>
-                    <ng-template #thenBlock><label><input class="uk-checkbox" type="checkbox" checked>{{day}}</label></ng-template>
-                    <ng-template #elseBlock> <label><input class="uk-checkbox" type="checkbox">{{day}}</label></ng-template>
+                    <div *ngIf = "isChecked(day); then thenBlock else elseBlock" ></div>
+                    <ng-template #thenBlock><label><input id="{{day}}A" value="{{day}}" class="uk-checkbox" type="checkbox" name="check" checked (click)="clickCheckbox(day + 'A')" >{{day}}</label></ng-template>
+                    <ng-template #elseBlock><label><input id="{{day}}B" value="{{day}}" class="uk-checkbox" type="checkbox" name="check" (click)="clickCheckbox(day + 'B')">{{day}}</label></ng-template>
                   </li>
                 </ul>
 

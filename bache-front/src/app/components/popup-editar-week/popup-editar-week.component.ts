@@ -4,6 +4,8 @@ import {CalendarService} from '../../services/calendar.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Calendar} from '../../model/calendar/Calendar';
 import {CalendarForm, ICalendarForm} from '../../model/calendar/CalendarForm';
+import { DAYS_OF_WEEK } from 'angular-calendar';
+import { lastDayOfISOWeek } from 'date-fns/esm';
 
 
 @Component({
@@ -30,6 +32,8 @@ export class PopupEditarWeekComponent implements OnInit {
   weekDays: string[];
 
   daysVisible: boolean = false;
+  errorHours: boolean = false;
+  errorDays: boolean = false;
 
   @Input()
   calendar: Calendar;
@@ -57,9 +61,11 @@ export class PopupEditarWeekComponent implements OnInit {
   }
 
   submitUpdate() {
-    const value: ICalendarForm = this.editWeekForm.value;
-    const result = this.calendarForm.convertToCalendar(value);
-    console.log(result);
+    if(this.hoursOk() && this.daysOk()){
+      const value: ICalendarForm = this.editWeekForm.value;
+      const result = this.calendarForm.convertToCalendar(value);
+      console.log(result);
+    }
   }
 
   isChecked(day: string): boolean{
@@ -70,4 +76,37 @@ export class PopupEditarWeekComponent implements OnInit {
     return variable;
 
   }
+
+  clickCheckbox(checkbox: string):void{
+    console.log(checkbox);
+    console.log(document.getElementById(checkbox));
+    var res = checkbox.substring(0,checkbox.length-1);
+    console.log(res);
+    //console.log(checkbox.value);
+    // if (checkbox.checked == true){
+    //   this.editWeekForm.value.days.add(checkbox.value);
+    // } else {
+    //   this.editWeekForm.value.days.remove(checkbox.value);
+    // }
+    console.log(this.editWeekForm.value.days);
+  }
+
+  hoursOk(){
+    const value = this.editWeekForm.value;
+    if (value.endHour < value.startHour){
+      this.errorHours = true;
+      return false;
+    }
+    this.errorHours = false;
+    return true;
+  }
+  daysOk(){
+    // var checkboxes = document.getElementsByName('check');
+    // checkboxes.forEach((item) => {
+    //   if (item.checked == true ) ;
+    // })
+    // console.log(checkboxes);
+    return true;
+  }
+
 }
