@@ -53,6 +53,7 @@ export class PopupEditarWeekComponent implements OnInit {
       days: [this.calendarForm.days, Validators.required]
     });
 
+    //TODO: Implementar getWeekDays()
     this.weekDays = this.calendarService.getWeekDays();
   }
 
